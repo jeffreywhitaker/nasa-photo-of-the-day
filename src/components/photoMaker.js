@@ -7,10 +7,12 @@ const PhotoMaker = props => {
         margin: 0 auto;
         border-left: 1px dashed black;
         border-right: 1px dashed black;
+        background: #f7e4f6;
     `
 
     const PhotoOfTheDay = styled.img`
         max-width: 50%;
+        border-radius: 20px;
     `
 
     const PhotoOfTheDayExplanation = styled.p`
@@ -24,15 +26,14 @@ const PhotoMaker = props => {
     //     margin: '0 auto',
     // }
 
-    const photoStyle = {
-        maxWidth: '50%',
-    }
+    // const photoStyle = {
+    //     maxWidth: '50%',
+    // }
 
     return (
         <PhotoOfTheDayDiv>
-            <h1>NASA Photo of the Day</h1>
-            <PhotoOfTheDay className="nasaPOTD_img" alt="NASA POTD" src={props.imgUrl} style={photoStyle} />
             <h2>{props.title}</h2>
+            <PhotoOfTheDay className="nasaPOTD_img" alt="NASA POTD" src={props.imgUrl}/>
             <p>{props.date}</p>
             <PhotoOfTheDayExplanation>{props.explanation}</PhotoOfTheDayExplanation>
         </PhotoOfTheDayDiv> 
