@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
+import PhotoGrid from "./components/photoGrid"
+import Header from "./components/Header"
+import Footer from  "./components/Footer"
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Header />
+      <PhotoGrid />
+      <Footer />
     </div>
   );
 }
