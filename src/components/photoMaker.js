@@ -15,8 +15,17 @@ const PhotoMaker = props => {
         max-width: 60%;
         border-radius: 20px;
 
+        @keyframes pulse {
+            from { transform: scale(1); }
+            50% { transform: scale(1.10); }
+            to { transform: scale(1); }
+        }
+
         &:hover {
-            opacity: .5;
+            opacity: .8;
+            animation-name: pulse;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
         }
     `
 

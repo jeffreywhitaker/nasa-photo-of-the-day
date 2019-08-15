@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import axios from "axios"
+import moment from "moment"
 
 import PhotoMaker from "./photoMaker"
 
@@ -17,7 +18,10 @@ export default function PhotoGrid() {
     }, [])
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2019-08-14')
+        let yesterdayDate = moment().subtract(1, 'days').format('YYYY-MM-DD')
+        console.log(yesterdayDate)
+
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${yesterdayDate}`)
         .then(response => {
             const nasaYesterdayPOTD = response.data;
             console.log(nasaYesterdayPOTD)
