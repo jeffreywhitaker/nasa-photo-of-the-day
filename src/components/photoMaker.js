@@ -8,17 +8,27 @@ const PhotoMaker = props => {
         border-left: 1px dashed black;
         border-right: 1px dashed black;
         background: #f7e4f6;
-    `
-
-    const PhotoOfTheDay = styled.img`
-        max-width: 50%;
         border-radius: 20px;
     `
 
+    const PhotoOfTheDay = styled.img`
+        max-width: 60%;
+        border-radius: 20px;
+
+        &:hover {
+            opacity: .5;
+        }
+    `
+
     const PhotoOfTheDayExplanation = styled.p`
-        max-width: 90%;
+        max-width: 80%;
         margin: 0 auto;
         font-family: calibri;
+        padding-bottom: 5%;
+    `
+
+    const PhotoOfTheDayTitle = styled.h2`
+        padding-top: 5%;
     `
 
     // const photoMakerStyle = {
@@ -32,7 +42,7 @@ const PhotoMaker = props => {
 
     return (
         <PhotoOfTheDayDiv>
-            <h2>{props.title}</h2>
+            <PhotoOfTheDayTitle>{props.title}</PhotoOfTheDayTitle>
             <PhotoOfTheDay className="nasaPOTD_img" alt="NASA POTD" src={props.imgUrl}/>
             <p>{props.date}</p>
             <PhotoOfTheDayExplanation>{props.explanation}</PhotoOfTheDayExplanation>
