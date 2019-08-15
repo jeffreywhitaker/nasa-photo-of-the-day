@@ -9,7 +9,7 @@ export default function PhotoGrid() {
     const [yesterdayPhoto, setYesterdayPhoto] = useState([])
 
     useEffect(() => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+        axios.get('https://api.nasa.gov/planetary/apod?api_key=mzfRaKfGrWlF0xD7hiFBFRbNgwG1qMcXpw3R1GzT')
         .then(response => {
             const nasaPOTD = response.data;
             console.log(nasaPOTD)
@@ -21,7 +21,7 @@ export default function PhotoGrid() {
         let yesterdayDate = moment().subtract(1, 'days').format('YYYY-MM-DD')
         console.log(yesterdayDate)
 
-        axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${yesterdayDate}`)
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=mzfRaKfGrWlF0xD7hiFBFRbNgwG1qMcXpw3R1GzT&date=${yesterdayDate}`)
         .then(response => {
             const nasaYesterdayPOTD = response.data;
             console.log(nasaYesterdayPOTD)
